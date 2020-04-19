@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>TabTool Popup</title>
+    <link rel="stylesheet" href="extension.css" />
+    <style>
+        .grow {flex-grow: 1;}
+        .pointer {cursor: pointer;}
+        .collapsed button {
+            opacity: 0;
+            pointer-events: none;
+        }
+        .collapsed.grow {display: none;}
+        #listText::before, #enterText::before {
+            content: "\25bc";
+            padding-right: 0.66em;
+        }
+        .collapsed #listText::before, .collapsed #enterText::before {
+            content: "\25b6";
+        }
+        html, body, main {
+            height: 100%;
+            overflow: hidden;
+            background: #fff;
+            font-size: 12px;
+        }
+        html, main {
+            max-height: 600px;
+            max-width: 800px;
+            min-height: 400px;
+            min-width: 500px;
+        }
+        main {
+            display: flex;
+            flex-direction: column;
+            resize: both;
+        }
+        button {
+            background: #ff4c65 !important;
+            border-color: #ff4c65 !important;
+            box-shadow: 0 1px 0 #ff4c65 inset !important;
+            font-size: 12px !important;
+        }
+        textarea {
+            background: #fafafa !important;
+            border: none !important;
+            font-family: monospace !important;
+            height: 100% !important;
+            margin: 0;
+            resize: none;
+            width: 100%;
+            word-break: break-all;
+        }
+        textarea[readonly] {background: #eaeaea !important;}
+        @media (prefers-color-scheme: dark) {
+            html, body, main {background: #444;}
+            textarea {
+                background: #222 !important;
+                color: white;
+            }
+            textarea[readonly] {background: #2d2d2d !important;}
+        }
+    </style>
+</head>
+<body>
+    <main class="panel-list">
+        <div class="panel-list-item disabled">
+            <div class="text pointer" id="listText" title="Click to toggle">
+                TabTool: Tab List
+            </div>
+            <div class="text-shortcut">
+                <button class="browser-style
+                               panel-section-footer-button
+                               default
+                               pointer"
+                        id="listButton"
+                        title="Shift+Enter"
+                >Copy Tabs</button>
+            </div>
+        </div>
+      
+        <div class="panel-section-separator"></div>
+
+        <div class="panel-section grow">
+            <textarea id="listArea"
+                      class="panel-list-item"
+                      readonly
+                      spellcheck="false"
+            ></textarea>
+        </div>
+
+        <div class="panel-section-separator"></div>
+
+        <div class="panel-list-item disabled">
+            <div class="text pointer" id="enterText" title="Click to toggle">
+                TabTool: Enter Tabs
+            </div>
+            <div class="text-shortcut">
+                <button class="browser-style
+                               panel-section-footer-button
+                               default
+                               pointer"
+                        id="enterButton"
+                        title="Ctrl+Enter"
+                >Open Tabs</button>
+            </div>
+        </div>
+      
+        <div class="panel-section-separator"></div>
+
+        <div class="panel-section grow">
+            <textarea id="enterArea"
+                      autofocus="autofocus"
+                      class="panel-list-item"
+                      spellcheck="false"
+            ></textarea>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
