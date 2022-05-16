@@ -2,7 +2,7 @@
 
 TabTool is a minimal Chrome/Firefox/Opera/etc. browser extension that lets you easily copy, manipulate, and open list of URLs.
 
-![Screenshot](screenshots/1.png)
+[![Screenshot](screenshots/1.png)](https://consto.uk/2020/04/19/tabtool)
 
 ## Features
 
