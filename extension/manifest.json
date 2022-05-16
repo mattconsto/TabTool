@@ -2,7 +2,7 @@
     "name": "TabTool",
     "author": "Matthew Consterdine <matt@consto.uk>",
     "manifest_version": 2,
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Easily copy, manipulate, and open lists of URLs.",
     "background": {
         "page": "background.html"
